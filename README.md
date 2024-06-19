@@ -3,27 +3,18 @@
 
 
 ## Introduction
-Class-Incremental Learning (CIL) aims to learn deep models on sequential tasks continually, where each new task includes a batch of new classes and deep models do not have access to task-ID information at the inference time. Recent vast pre-trained models (PTMs) have achieved outstanding performance by prompt technique in practical CIL without the old samples (rehearsal-free) and with a memory constraint (memory-constrained): Prompt-extending and Prompt-fixed methods. However, prompt-extending methods need a large memory buffer to maintain an ever-expanding prompt pool and meet an extra challenging prompt selection problem. Prompt-fixed methods only learn a single set of prompts on one of the incremental tasks and can not handle all the incremental tasks effectively. To achieve a good balance between the memory cost and the performance on all the tasks, we propose a Parameter-Efficient Cross-Task Prompt (PECTP) framework with Prompt Retention module (PRM) and Classification Layer Retention module (LRM). To make the ﬁnal learned prompts effective on all incremental tasks, PRM constrains the evolution of cross-task prompts' parameters from Outer Prompt Granularity and Inner Prompt Granularity. Besides, we employ LRM to inherit old knowledge in the last classification layer to facilitate the cross-tasks prompts' generalization ability. Extensive experiments show the effectiveness of our method.
+  Class-Incremental Learning (CIL) aims to learn deep models on sequential tasks continually, where each new task includes a batch of new classes and deep models do not have access to task-ID information at the inference time. Recent vast pre-trained models (PTMs) have achieved outstanding performance by prompt technique in practical CL without the old samples (rehearsal-free) and with a memory constraint (memory-constrained): Prompt-extending and Prompt-fixed methods. However, prompt-extending methods need a large memory buffer to maintain an ever-expanding prompt pool and meet an extra challenging prompt selection problem. Prompt-fixed methods only learn a single set of prompts on one of the incremental tasks and can not handle all the incremental tasks effectively. To achieve a good balance between the memory cost and the performance on all the tasks, we propose a Parameter-Efficient Cross-Task Prompt (PECTP) framework with Prompt Retention module (PRM) and classifier head Retention module (LRM). To make the ﬁnal learned prompts effective on all incremental tasks, PRM constrains the evolution of cross-task prompts' parameters from Outer Prompt Granularity and Inner Prompt Granularity. Besides, we employ LRM to inherit old knowledge in the last classifier head to facilitate the cross-tasks prompts' generalization ability. Extensive experiments show the effectiveness of our method. 
+
+## Trade-off between performance and overhead.
+![alt text](fig_readme/first_pic.png)
 
 
+## Methods
+![alt text](fig_readme/main_pic.png)
+## Results
+![alt text](fig_readme/results.png)
 
 
-
-![image-20240118175522482](image-20240118175522482.png)
-
-
-
-![image-20240118175424076](image-20240118175424076.png)
-
-
-
-
-<h3>TL;DR</h3>
-
-
-A Parameter-Efficient Cross-Task Prompts learning framework, with a fixed number of prompts dynamically learning on each incremental task. 
-Extensive experiments on  seven benchmarks show that **PECTP** can beat SOTA with only a few tunable parameters.
-</div>
 
 
 
@@ -32,7 +23,7 @@ Extensive experiments on  seven benchmarks show that **PECTP** can beat SOTA wit
 1. [torch 1.11.0](https://github.com/pytorch/pytorch)
 2. [torchvision 0.12.0](https://github.com/pytorch/vision)
 3. [timm 0.6.12](https://github.com/huggingface/pytorch-image-models)
-
+4. cuda 10.2 and cudnn 8.33
 
 ### Dataset
 We provide the processed datasets as follows:
@@ -49,21 +40,7 @@ These subsets are sampled from the original datasets. Please note that I do not 
 You need to modify the path of the datasets in `./utils/data.py`  according to your own path.
 
 ## Running scripts
-Please follow the settings in the `exps` folder to prepare your json files, and then run:
-
-```
-sh run_cifar.sh
-```
-
-or
-```
-python main.py --gpu_used 1 --task_num 10 --file_name fetch_hyper_para --lamda_for_featureformer 350000 --lamda_for_featurelower 0 --lamda_for_pool3 350000 --lamda_for_prompt 400 --fc_inittype type8 --task_id 0
-```
-
+The code is coming soon.
 
 ## Acknolegment
 This repo is based on  [PyCIL](https://github.com/G-U-N/PyCIL) and [ADAM](https://github.com/zhoudw-zdw/RevisitingCIL).
-
-
-
-python main.py --gpu_used 2 --task_num 20 --file_name fetch_hyper_para --lamda_for_featureformer 70000 --lamda_for_featurelower 0 --lamda_for_pool3 70000 --lamda_for_prompt 500 --fc_inittype type8 --task_id 0
