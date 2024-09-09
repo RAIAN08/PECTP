@@ -35,5 +35,17 @@ You need to modify the path of the datasets in `./utils/data.py`  according to y
 
 The implentation of Prompt-based continual learning is based on [PyCIL](https://github.com/G-U-N/PyCIL) and [ADAM](https://github.com/zhoudw-zdw/RevisitingCIL).
 
+## Citation
+
+If you find our work helpful for your research, please consider citing our work.
+
+```
+@article{feng2024pectp,
+  title={PECTP: Parameter-Efficient Cross-Task Prompts for Incremental Vision Transformer},
+  author={Feng, Qian and Zhao, Hanbin and Zhang, Chao and Dong, Jiahua and Ding, Henghui and Jiang, Yu-Gang and Qian, Hui},
+  journal={arXiv preprint arXiv:2407.03813},
+  year={2024}
+}
+```
 
 Many thanks to its contributors!
