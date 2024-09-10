@@ -35,6 +35,8 @@ You need to modify the path of the datasets in `./utils/data.py`  according to y
 
 The implentation of Prompt-based continual learning is based on [PyCIL](https://github.com/G-U-N/PyCIL) and [ADAM](https://github.com/zhoudw-zdw/RevisitingCIL).
 
+Many thanks to its contributors!
+
 ## Citation
 
 If you find our work helpful for your research, please consider citing our work.
@@ -48,4 +50,3 @@ If you find our work helpful for your research, please consider citing our work.
 }
 ```
 
-Many thanks to its contributors!
