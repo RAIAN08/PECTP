@@ -1,0 +1,205 @@
+config: ./exps/cifar/adam_vpt_deep.json
+attn_store: 0
+change_data_order: 0
+task_num: 10
+gpu_used: 3
+prompt_num: 999
+use_tensorboard: 1
+feature_distill_type: allheadallfeature
+file_name: 09011_type8_bushiyuanban_pool1_3_addprompt
+lamda_for_logit_loss: 0.0
+lamda_for_prompt: 400.0
+lamda_for_featureformer: 350000.0
+lamda_for_featurelower: 0.0
+lamda_for_pool3: 350000.0
+intra_share: 1
+used_decouple: 0
+decouple_type: 
+Block_which: 
+Part_which: 
+loss_ratio_print: 0
+ratio_fix_para: 0
+lamda1: 1
+lamda2: 1
+lamda3: 1
+edge1_type: L2
+edge2_type: 
+edge3_type: 
+fc_inittype: type8
+cal_center: 0
+prefix:  
+dataset: cifar224
+memory_size: 0
+memory_per_class: 0
+fixed_memory: False
+shuffle: True
+init_cls: 10
+increment: 10
+model_name: adam_vpt
+convnet_type: pretrained_vit_b16_224_in21k_vpt
+device: [device(type='cuda', index=3)]
+seed: 1993
+tuned_epoch: 20
+init_lr: 0.01
+batch_size: 48
+weight_decay: 0.0005
+min_lr: 0
+optimizer: sgd
+vpt_type: deep
+prompt_token_num: 5
+print: 1
+[68, 56, 78, 8, 23, 84, 90, 65, 74, 76, 40, 89, 3, 92, 55, 9, 26, 80, 43, 38, 58, 70, 77, 1, 85, 19, 17, 50, 28, 53, 13, 81, 45, 82, 6, 59, 83, 16, 15, 44, 91, 41, 72, 60, 79, 52, 20, 10, 31, 54, 37, 95, 14, 71, 96, 98, 97, 2, 64, 66, 42, 22, 35, 86, 24, 34, 87, 21, 99, 0, 88, 27, 18, 94, 11, 12, 47, 25, 30, 46, 62, 69, 36, 61, 7, 63, 75, 5, 32, 4, 51, 48, 73, 93, 39, 67, 29, 49, 57, 33]
+All params: 85844736
+Trainable params: 46080
+Learning on 0-10
+=============== >>> train without kd loss, but only with cls loss <<< ====================
+Task 0, Epoch 20/20 => Loss 0.201, Train_accy 94.02, Test_accy 99.10
+No NME accuracy.
+CNN: {'total': 99.1, '00-09': 99.1, 'old': 0, 'new': 99.1}
+CNN top1 curve: [99.1]
+CNN top5 curve: [100.0]
+
+Average Accuracy (CNN): 99.1
+All params: 171658753
+Trainable params: 85860097
+Learning on 10-20
+=============== >>> train with both kd loss and cls loss <<< ====================
+Hand making lamda...
+Task 1, Epoch 20/20 => Loss 0.354, Train_accy 2.06, Test_accy 96.70
+No NME accuracy.
+CNN: {'total': 96.9, '00-09': 98.0, '10-19': 95.8, 'old': 98.0, 'new': 95.8}
+CNN top1 curve: [99.1, 96.9]
+CNN top5 curve: [100.0, 99.65]
+
+Average Accuracy (CNN): 98.0
+All params: 171674113
+Trainable params: 85875457
+Learning on 20-30
+=============== >>> train with both kd loss and cls loss <<< ====================
+Hand making lamda...
+Task 2, Epoch 20/20 => Loss 0.186, Train_accy 1.04, Test_accy 95.03
+No NME accuracy.
+CNN: {'total': 95.87, '00-09': 96.6, '10-19': 93.9, '20-29': 97.1, 'old': 95.25, 'new': 97.1}
+CNN top1 curve: [99.1, 96.9, 95.87]
+CNN top5 curve: [100.0, 99.65, 99.43]
+
+Average Accuracy (CNN): 97.29
+All params: 171689473
+Trainable params: 85890817
+Learning on 30-40
+=============== >>> train with both kd loss and cls loss <<< ====================
+Hand making lamda...
+Task 3, Epoch 20/20 => Loss 0.262, Train_accy 0.66, Test_accy 92.75
+No NME accuracy.
+CNN: {'total': 94.05, '00-09': 94.3, '10-19': 91.1, '20-29': 96.4, '30-39': 94.4, 'old': 93.93, 'new': 94.4}
+CNN top1 curve: [99.1, 96.9, 95.87, 94.05]
+CNN top5 curve: [100.0, 99.65, 99.43, 99.38]
+
+Average Accuracy (CNN): 96.48
+All params: 171704833
+Trainable params: 85906177
+Learning on 40-50
+=============== >>> train with both kd loss and cls loss <<< ====================
+Hand making lamda...
+Task 4, Epoch 20/20 => Loss 0.195, Train_accy 0.34, Test_accy 91.42
+No NME accuracy.
+CNN: {'total': 92.34, '00-09': 92.4, '10-19': 89.5, '20-29': 94.5, '30-39': 91.7, '40-49': 93.6, 'old': 92.02, 'new': 93.6}
+CNN top1 curve: [99.1, 96.9, 95.87, 94.05, 92.34]
+CNN top5 curve: [100.0, 99.65, 99.43, 99.38, 99.34]
+
+Average Accuracy (CNN): 95.652
+All params: 171720193
+Trainable params: 85921537
+Learning on 50-60
+=============== >>> train with both kd loss and cls loss <<< ====================
+Hand making lamda...
+Task 5, Epoch 20/20 => Loss 0.238, Train_accy 1.12, Test_accy 90.43
+No NME accuracy.
+CNN: {'total': 91.4, '00-09': 91.4, '10-19': 91.3, '20-29': 93.7, '30-39': 89.9, '40-49': 90.0, '50-59': 92.1, 'old': 91.26, 'new': 92.1}
+CNN top1 curve: [99.1, 96.9, 95.87, 94.05, 92.34, 91.4]
+CNN top5 curve: [100.0, 99.65, 99.43, 99.38, 99.34, 99.07]
+
+Average Accuracy (CNN): 94.94333333333333
+All params: 171735553
+Trainable params: 85936897
+Learning on 60-70
+=============== >>> train with both kd loss and cls loss <<< ====================
+Hand making lamda...
+Task 6, Epoch 20/20 => Loss 0.188, Train_accy 0.26, Test_accy 90.69
+No NME accuracy.
+CNN: {'total': 91.16, '00-09': 89.6, '10-19': 90.7, '20-29': 94.3, '30-39': 89.6, '40-49': 89.5, '50-59': 89.4, '60-69': 95.0, 'old': 90.52, 'new': 95.0}
+CNN top1 curve: [99.1, 96.9, 95.87, 94.05, 92.34, 91.4, 91.16]
+CNN top5 curve: [100.0, 99.65, 99.43, 99.38, 99.34, 99.07, 99.09]
+
+Average Accuracy (CNN): 94.40285714285713
+All params: 171750913
+Trainable params: 85952257
+Learning on 70-80
+=============== >>> train with both kd loss and cls loss <<< ====================
+Hand making lamda...
+Task 7, Epoch 20/20 => Loss 0.208, Train_accy 0.52, Test_accy 88.36
+No NME accuracy.
+CNN: {'total': 88.75, '00-09': 89.6, '10-19': 88.8, '20-29': 93.6, '30-39': 88.1, '40-49': 87.2, '50-59': 85.0, '60-69': 89.8, '70-79': 87.9, 'old': 88.87, 'new': 87.9}
+CNN top1 curve: [99.1, 96.9, 95.87, 94.05, 92.34, 91.4, 91.16, 88.75]
+CNN top5 curve: [100.0, 99.65, 99.43, 99.38, 99.34, 99.07, 99.09, 98.88]
+
+Average Accuracy (CNN): 93.69624999999999
+All params: 171766273
+Trainable params: 85967617
+Learning on 80-90
+=============== >>> train with both kd loss and cls loss <<< ====================
+Hand making lamda...
+Task 8, Epoch 20/20 => Loss 0.209, Train_accy 0.26, Test_accy 87.42
+No NME accuracy.
+CNN: {'total': 88.34, '00-09': 88.0, '10-19': 88.5, '20-29': 93.6, '30-39': 88.0, '40-49': 85.5, '50-59': 85.3, '60-69': 89.7, '70-79': 83.4, '80-89': 93.1, 'old': 87.75, 'new': 93.1}
+CNN top1 curve: [99.1, 96.9, 95.87, 94.05, 92.34, 91.4, 91.16, 88.75, 88.34]
+CNN top5 curve: [100.0, 99.65, 99.43, 99.38, 99.34, 99.07, 99.09, 98.88, 98.6]
+
+Average Accuracy (CNN): 93.10111111111111
+All params: 171781633
+Trainable params: 85982977
+Learning on 90-100
+=============== >>> train with both kd loss and cls loss <<< ====================
+Hand making lamda...
+Task 9, Epoch 20/20 => Loss 0.237, Train_accy 0.02, Test_accy 87.45
+No NME accuracy.
+CNN: {'total': 87.94, '00-09': 87.3, '10-19': 86.5, '20-29': 93.1, '30-39': 87.8, '40-49': 86.4, '50-59': 83.4, '60-69': 89.1, '70-79': 82.4, '80-89': 91.6, '90-99': 91.8, 'old': 87.51, 'new': 91.8}
+CNN top1 curve: [99.1, 96.9, 95.87, 94.05, 92.34, 91.4, 91.16, 88.75, 88.34, 87.94]
+CNN top5 curve: [100.0, 99.65, 99.43, 99.38, 99.34, 99.07, 99.09, 98.88, 98.6, 98.44]
+
+Average Accuracy (CNN): 92.585
+
+
+===========================================
+ ================>  Setting  <================ 
+lamda_for_featureformer : 350000.0
+lamda_for_pool3 : 350000.0
+lamda_for_prompt : 400.0
+fc_init_type : type8
+
+
+lamda_for_featurelower : 0.0
+lamda_for_logit_loss : 0.0
+feature_distill_type : allheadallfeature
+task_num : 10
+intra_share : 1
+prompt_token_num : 5
+ratio_fix_para : 0
+used_decouple : 0 and decouple_type : 
+===========================================
+
+
+CNN: {'total': 99.1, '00-09': 99.1, 'old': 0, 'new': 99.1}
+CNN: {'total': 96.9, '00-09': 98.0, '10-19': 95.8, 'old': 98.0, 'new': 95.8}
+CNN: {'total': 95.87, '00-09': 96.6, '10-19': 93.9, '20-29': 97.1, 'old': 95.25, 'new': 97.1}
+CNN: {'total': 94.05, '00-09': 94.3, '10-19': 91.1, '20-29': 96.4, '30-39': 94.4, 'old': 93.93, 'new': 94.4}
+CNN: {'total': 92.34, '00-09': 92.4, '10-19': 89.5, '20-29': 94.5, '30-39': 91.7, '40-49': 93.6, 'old': 92.02, 'new': 93.6}
+CNN: {'total': 91.4, '00-09': 91.4, '10-19': 91.3, '20-29': 93.7, '30-39': 89.9, '40-49': 90.0, '50-59': 92.1, 'old': 91.26, 'new': 92.1}
+CNN: {'total': 91.16, '00-09': 89.6, '10-19': 90.7, '20-29': 94.3, '30-39': 89.6, '40-49': 89.5, '50-59': 89.4, '60-69': 95.0, 'old': 90.52, 'new': 95.0}
+CNN: {'total': 88.75, '00-09': 89.6, '10-19': 88.8, '20-29': 93.6, '30-39': 88.1, '40-49': 87.2, '50-59': 85.0, '60-69': 89.8, '70-79': 87.9, 'old': 88.87, 'new': 87.9}
+CNN: {'total': 88.34, '00-09': 88.0, '10-19': 88.5, '20-29': 93.6, '30-39': 88.0, '40-49': 85.5, '50-59': 85.3, '60-69': 89.7, '70-79': 83.4, '80-89': 93.1, 'old': 87.75, 'new': 93.1}
+CNN: {'total': 87.94, '00-09': 87.3, '10-19': 86.5, '20-29': 93.1, '30-39': 87.8, '40-49': 86.4, '50-59': 83.4, '60-69': 89.1, '70-79': 82.4, '80-89': 91.6, '90-99': 91.8, 'old': 87.51, 'new': 91.8}
+CNN top1 curve: [99.1, 96.9, 95.87, 94.05, 92.34, 91.4, 91.16, 88.75, 88.34, 87.94]
+Average Accuracy (CNN): 92.585
+new : [99.1, 95.8, 97.1, 94.4, 93.6, 92.1, 95.0, 87.9, 93.1, 91.8]
+old : [0, 98.0, 95.25, 93.93, 92.02, 91.26, 90.52, 88.87, 87.75, 87.51]
